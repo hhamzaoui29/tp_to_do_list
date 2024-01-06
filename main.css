@@ -1,0 +1,157 @@
+/* Déclaration des variables  */
+/* 1rem = 16px*/
+:root{
+   --dark:#374151; /*Sombre*/
+   --darker:#1f2937;/*- Sombre plus Foncé-*/ 
+   --darkest:#111827; /*- Plus sombre-*/
+   --light : #eee; /*Lumineu*/
+   --gray : #6b7280;
+   --pink : #ec4899;
+   --purpule:#8b5cfc;
+
+}
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+header{
+    border: 2px solid red;
+   padding: 2rem 1rem;
+   max-width: 800px;
+   width: 100%;
+   margin:0 auto ;
+}
+header h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+/* Css form */
+#new-task-form{
+    display: flex;
+}
+/* Css pour modifier les boutons et input (Enlever tous les décores */
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;/* on afface le background*/
+}
+/*Css pour input dans Form*/
+#new-task-input{
+     flex: 1 1 0%;
+     background-color: var(--darker);
+     padding: 1rem;
+     border-radius: 1rem;
+     margin-right: 1rem;
+     color: var(--light);
+     font-size: 1.25rem;
+}
+/*-Css pour le placeholder-*/
+#new-task-input::placeholder{
+    color: var(--gray);
+}
+/*-Css pou le Submit-*/
+#new-task-submit{
+    color: var(--pink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    /* creation d'un degrader a partire de la droite */
+    background-image: linear-gradient(to right, var(--pink), var(--purpule));
+    /* On retire la background-color */
+    -webkit-background-clip: text;
+    /* on creér un transparent pour faire aparaitre le dégrader */
+    -webkit-text-fill-color: transparent;
+    transition: 0.10s;
+}
+/* A survole du curseur */
+#new-task-submit:hover{
+    opacity: 0.8;
+}
+/* On cliquant sur le submit */
+#new-task-submit:active{
+    opacity: 0.6;
+}
+/* Css pour main */
+main{
+    border: 2px solid red;
+    /* flex: 1 1 0%; */
+    padding: 2rem 1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+/* Css pour la class task-list */
+.task-list{
+    padding: 1rem;
+}
+.task-list h2{
+    font-size: 1.5rem;
+    font-size: 300 ;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+ #tasks .task{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkest);
+  padding: 1rem; /* 1rem = 16px*/
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+/* -- important !!!! --*/
+#tasks .task .content{
+    flex : 1 1 0%;
+}
+/*-- !!! --*/
+#tasks .task .content .text{
+    color: var(--light);
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+#tasks .task .content .text:not(:read-only){
+    color: var(--pink);
+}
+
+#tasks .task .actions{
+    display: flex;
+    margin: 0 0.5rem;
+}
+.task .actions button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .actions button:hover{
+    opacity: 0.8;
+}
+/* On cliquant sur le submit */
+.task .actions button:active{
+    opacity: 0.6;
+}
+
+.task .actions .edit{
+    background-image: linear-gradient(to right, var(--pink), var(--purpule));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.task .actions .delete{
+    color: crimson;
+}
